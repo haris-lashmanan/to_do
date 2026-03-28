@@ -76,6 +76,8 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                         onChanged: (value) async {
                           await context.read<ToDoVm>().fetchToDoList(
                             searchText: _myController.text,
+                            statusValue: context.read<ToDoVm>().status,
+                            sortValue: context.read<ToDoVm>().sorting,
                           );
                         },
                         decoration: InputDecoration(
@@ -89,6 +91,8 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                               _myController.clear();
                               await context.read<ToDoVm>().fetchToDoList(
                                 searchText: _myController.text,
+                                sortValue: context.read<ToDoVm>().sorting,
+                                statusValue: context.read<ToDoVm>().status,
                               );
                             },
                             // This creates the circular "halo" effect on hover
@@ -153,6 +157,10 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                                   onPressed: () async {
                                     await context.read<ToDoVm>().fetchToDoList(
                                       searchText: _myController.text,
+                                      sortValue: context.read<ToDoVm>().sorting,
+                                      statusValue: context
+                                          .read<ToDoVm>()
+                                          .status,
                                     );
                                   },
                                   style: TextButton.styleFrom(
@@ -195,6 +203,7 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
         await context.read<ToDoVm>().fetchToDoList(
           statusValue: status,
           searchText: _myController.text,
+          sortValue: context.read<ToDoVm>().sorting,
         );
       },
       child: Container(

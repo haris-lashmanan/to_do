@@ -17,6 +17,7 @@ class SortPopupMenu extends StatelessWidget {
         await context.read<ToDoVm>().fetchToDoList(
           sortValue: sortValue,
           searchText: searchText,
+          statusValue: context.read<ToDoVm>().status,
         );
       },
       itemBuilder: (_) => const [
