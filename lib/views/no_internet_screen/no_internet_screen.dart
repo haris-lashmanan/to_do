@@ -22,7 +22,7 @@ class NoInternetScreen extends StatelessWidget {
               onPressed: () => context.go('/'),
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(
-                  fontWeight: FontWeight.w700, // Use FontWeight constants
+                  fontWeight: FontWeight.w700,
                   fontSize: 16,
                 ),
               ),

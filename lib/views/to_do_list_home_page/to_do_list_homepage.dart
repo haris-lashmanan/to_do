@@ -64,10 +64,7 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                           BoxShadow(
                             color: AppThemes.black.withValues(alpha: 0.05),
                             blurRadius: 10,
-                            offset: const Offset(
-                              0,
-                              4,
-                            ), // Position of the shadow
+                            offset: const Offset(0, 4),
                           ),
                         ],
                       ),
@@ -95,17 +92,14 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                                 statusValue: context.read<ToDoVm>().status,
                               );
                             },
-                            // This creates the circular "halo" effect on hover
                             hoverColor: AppThemes.grey.withValues(alpha: 0.1),
-                            splashRadius:
-                                20, // Keeps the ripple/hover effect tight around the icon
+                            splashRadius: 20,
                             icon: Icon(
                               Icons.clear,
                               color: AppThemes.black,
                               size: 20,
                             ),
-                            tooltip:
-                                'Clear text', // Good for accessibility and shows on long hover
+                            tooltip: 'Clear text',
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12.0),
@@ -165,8 +159,7 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                                   },
                                   style: TextButton.styleFrom(
                                     textStyle: const TextStyle(
-                                      fontWeight: FontWeight
-                                          .w700, // Use FontWeight constants
+                                      fontWeight: FontWeight.w700,
                                       fontSize: 16,
                                     ),
                                   ),
@@ -178,7 +171,6 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
                         : Padding(
                             padding: const EdgeInsets.only(top: 8.0),
                             child: ListView.builder(
-                              // shrinkWrap: true, // No longer needed with Expanded
                               padding: const EdgeInsets.symmetric(vertical: 16),
                               itemCount: toDoList.length,
                               itemBuilder: (context, index) {
