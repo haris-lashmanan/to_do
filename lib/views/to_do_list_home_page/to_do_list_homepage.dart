@@ -27,7 +27,6 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
   Widget build(BuildContext context) {
     final toDoList = context.watch<ToDoVm>().toDoList;
     return Scaffold(
-      backgroundColor: AppThemes.black12,
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.appBarText,
@@ -186,6 +185,30 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
           ),
         ),
       ),
+      bottomNavigationBar: (toDoList == null || toDoList.isEmpty)
+          ? null
+          : BottomAppBar(
+              color: AppThemes.white,
+              child: SafeArea(
+                child: Container(
+                  color: AppThemes.white,
+                  height: 24,
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Showing ${toDoList.length} of ${context.watch<ToDoVm>().totalCount} todos',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
     );
   }
 

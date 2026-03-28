@@ -11,6 +11,8 @@ class ToDoVm with ChangeNotifier {
   Status get status => _status;
   Sorting _sorting = Sorting.none;
   Sorting get sorting => _sorting;
+  int _totalCount = 0;
+  int get totalCount => _totalCount;
 
   Future<void> fetchToDoList({
     String searchText = '',
@@ -28,6 +30,7 @@ class ToDoVm with ChangeNotifier {
             .map((json) => ToDoListModel.fromJson(json as Map<String, dynamic>))
             .toList();
         if (toDoList != null && (toDoList?.length ?? 0) > 0) {
+          _totalCount = _toDoList!.length;
           if (searchText.isNotEmpty) {
             _toDoList = toDoList!
                 .where((item) => item.title!.startsWith(searchText))
