@@ -9,5 +9,5 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appBarText => 'Welcome Back';
+  String get appBarText => 'To Do Items';
 }

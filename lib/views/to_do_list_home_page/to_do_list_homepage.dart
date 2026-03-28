@@ -4,6 +4,7 @@ import 'package:todolist/utils/theme/appTheme.dart';
 import 'package:todolist/views/to_do_list_home_page/sort_pop_up.dart';
 import 'package:todolist/views/to_do_list_home_page/to_do_card.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../view_models/to_do_vm.dart';
 
 class ToDoListHomepage extends StatefulWidget {
@@ -29,7 +30,7 @@ class _ToDoListHomepageState extends State<ToDoListHomepage> {
       backgroundColor: AppThemes.black12,
       appBar: AppBar(
         title: Text(
-          'To Do Items',
+          AppLocalizations.of(context)!.appBarText,
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 18,

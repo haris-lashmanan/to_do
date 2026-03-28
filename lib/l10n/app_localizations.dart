@@ -97,7 +97,7 @@ abstract class AppLocalizations {
   /// No description provided for @appBarText.
   ///
   /// In en, this message translates to:
-  /// **'Welcome Back'**
+  /// **'To Do Items'**
   String get appBarText;
 }
 
